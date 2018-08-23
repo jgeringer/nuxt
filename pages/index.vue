@@ -14,6 +14,8 @@
               {{ post.fields.title }}
             </nuxt-link>
           </h2>
+          <h3>Test H3</h3>
+          <h4>Test H4</h4>
         </div>
       </div>
     </div>
@@ -40,3 +42,10 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+  h4 {
+      font-size: 42px;
+      color: $colorLight;
+  }
+</style>

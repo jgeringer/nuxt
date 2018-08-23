@@ -24,6 +24,9 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+  css: [
+    '@/assets/scss/main.scss'
+  ],
   /*
   ** Customize the progress bar color
   */
@@ -47,7 +50,13 @@ module.exports = {
     }
   },
   plugins: ['~/plugins/contentful'],
-  modules: ['@nuxtjs/dotenv', '@nuxtjs/markdownit'],
+  modules: [
+    ['nuxt-sass-resources-loader', [
+      'assets/scss/core/variables.scss'
+  ]],
+    '@nuxtjs/dotenv',
+    '@nuxtjs/markdownit'
+  ],
   markdownit: {
     injected: true
   },
