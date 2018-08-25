@@ -14,12 +14,14 @@
           </p>
 
           <h1 class="title is-2">
-            {{ post.fields.title }}
+            Title: {{ post.fields.title }}
           </h1>
 
           <hr />
 
-          <section v-for="callout in postCallouts.callouts" :key="callout.id">
+          <section 
+              v-for="(callout, index) in postCallouts"
+              :key="index">
             <h2>
               {{ callout.fields.title }}
             </h2>
@@ -42,7 +44,8 @@ import client from '~/plugins/contentful';
 export default {
   data() {
     return{
-      loaded: false
+      loaded: false,
+      postCallouts: []
     }
   },
   methods: {
@@ -52,7 +55,8 @@ export default {
   },
   asyncData({ params, error, payload }) {
     if (payload) return { 
-      post: payload
+      post: payload,
+      postCallouts: payload.fields.callouts
     };
 
     return client
@@ -64,7 +68,7 @@ export default {
         console.warn('entries: ', entries)
         return { 
           post: entries.items[0],
-          postCallouts: entries.items[0].fields
+          postCallouts: entries.items[0].fields.callouts
         };
       })
       .catch(e => console.log(e));

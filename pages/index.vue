@@ -24,7 +24,7 @@
 import client from '~/plugins/contentful';
 
 export default {
-  asyncData({ params }) {
+  async asyncData({ params }) {
     return client
       .getEntries({
         content_type: 'post',
