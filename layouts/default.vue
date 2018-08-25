@@ -1,19 +1,24 @@
 <template>
   <div>
-    <section class="hero has-text-centered is-primary">
+    <section class="hero is-primary">
       <div class="hero-body">
         <div class="container">
           <h1 class="title">
-            <nuxt-link to="/">Nuxt Blog</nuxt-link>
+            <nuxt-link to="/">Joe Geringer</nuxt-link>
           </h1>
           <h2 class="subtitle">
-            Your all round tech blog
+            Frontend Web Developer
           </h2>
         </div>
       </div>
     </section>
 
     <nuxt/>
+
+    <footer>
+      <p>I'm a footer</p>
+    </footer>
+    
   </div>
 </template>
 

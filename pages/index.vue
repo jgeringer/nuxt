@@ -3,9 +3,7 @@
     <div class="container">
       <div class="columns">
         <div class="column is-offset-2 is-8">
-          <h1 class="title is-2">Latest Posts</h1>
-          <hr>
-
+          <hr />
           <h2
             class="title is-4"
             v-for="(post, index) in posts"
@@ -33,6 +31,7 @@ export default {
         order: '-sys.createdAt',
       })
       .then(entries => {
+        console.warn('index entries: ', entries)
         return { posts: entries.items };
       })
       .catch(e => console.log(e));
