@@ -1,16 +1,18 @@
 <template>
   <section class="section">
-    
+
+    <a :href="post.fields.url" v-text="post.fields.heroButtonText" target="_blank" class="Button"></a>
     <transition name="fade">
       <img class="HeroImage" v-on:load="onLoaded" v-show="loaded" v-if="post.fields.heroImage" :src="post.fields.heroImage.fields.file.url">
     </transition>
+    <div class="content" v-html="$md.render(post.fields.description)"></div>
 
     <div class="container">
       <div class="columns">
         <div class="column is-offset-2 is-8">
           
           <p class="subtitle is-6">
-            <nuxt-link to="/">Back to Blog home</nuxt-link>
+            <nuxt-link to="/">&laquo; Home</nuxt-link>
           </p>
 
           <h1 class="title is-2">
@@ -31,7 +33,6 @@
 
           <hr />
 
-          <div class="content" v-html="$md.render(post.fields.description)"></div>
         </div>
       </div>
     </div>

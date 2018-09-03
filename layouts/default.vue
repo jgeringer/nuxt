@@ -15,8 +15,24 @@
 
     <nuxt/>
 
-    <footer>
-      <p>I'm a footer</p>
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <ul>
+          <li>
+            <a href="#">Work</a>
+          </li>
+          <li>
+            <a href="#">About</a>
+          </li>
+          <li>
+            <a href="#">Contact</a>
+          </li>
+          <li>
+            <a href="#">Resume</a>
+          </li>
+        </ul>
+        <p><a href="mailto:joegeringer@gmail.com">joegeringer@gmail.com</a></p>
+      </div>
     </footer>
     
   </div>
